@@ -7,6 +7,7 @@ import StudentDashboard from './pages/student/Dashboard'
 import ProtectedRoutes from './routes/ProtectedRoutes'
 import AdminRoutes from './routes/AdminRoutes'
 import StudentRoutes from './routes/StudentRoutes'
+import VideoPage from './pages/student/VideoPage'
 
 
 
@@ -42,6 +43,20 @@ function App() {
           </ProtectedRoutes>
         }
       />
+
+      <Route
+        path="/student/videos"
+        element={
+          <ProtectedRoutes>
+            <StudentRoutes>
+              <MainLayouts>
+                <VideoPage/>
+              </MainLayouts>
+            </StudentRoutes>
+          </ProtectedRoutes>
+        }
+      />
+
 
     </Routes>
   )

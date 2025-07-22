@@ -1,6 +1,7 @@
 import axios from "axios";
+import api from "./api";
 export const fetchVideos = async ()=>{
-    const response = await axios.get(`http://localhost:5000/videos`)
+    const response = await api.get(`/videos`)
 
     return response.data;
 }
