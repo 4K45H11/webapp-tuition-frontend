@@ -6,7 +6,7 @@ type Video = {
     _id: string,
     title: string,
     description: string,
-    url: string
+    videoUrl: string
 }
 
 const VideoPage = () => {
@@ -20,6 +20,8 @@ const VideoPage = () => {
             .finally(() => setLoading(false))
     }, []);
 
+    console.log(videos)
+
     return (
         <div className="p-4">
             <h1>Video Lectures</h1>
@@ -27,7 +29,7 @@ const VideoPage = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {
                         videos.map((v)=>(
-                            <VideoCard key={v._id} title={v.title} description={v.description} url={v.url}/>
+                            <VideoCard key={v._id} title={v.title} description={v.description} url={v.videoUrl}/>
                         ))
                     }
                 </div>
